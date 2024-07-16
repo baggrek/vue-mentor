@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vue Instance Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <style>
+    body {
+      margin: 5%;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>{{ message }}</h1>
+    <button v-on:click="greet">Greet</button>
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello, Vue!'
+      },
+      methods: {
+        greet: function() {
+          alert(this.message);
+        }
+      },
+      created: function() {
+        console.log('Instance created');
+      },
+      mounted: function() {
+        console.log('Instance mounted');
+      }
+    });
+  </script>
+</body>
+</html>
